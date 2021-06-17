@@ -1,20 +1,20 @@
-# Binary-And-Genetic-BNG (library)
-This repository contains a simple python library to convert binary data to genetic codes and further genetic codes back to binary data.
+# BinGenetic
+This repository contains a simple python library to convert binary data (in digital form) to genetic codes and further genetic codes back to binary data.
 
 ##### Author: [Ravin Kumar](https://mr-ravin.github.io)
 
 - #### Binary Code to Genetic Code:
 
 ```python
-import BNG
-genetic_code = BNG.btg(["00011011"],"dna") # first parameter is binary code as a list, second parameter is the type of genetic code i.e. DNA, or RNA
+import bingenetic
+genetic_code = bingenetic.btg(["00011011"],"dna") # first parameter is binary code as a list, second parameter is the type of genetic code i.e. DNA, or RNA
 ```
 
 - #### Genetic Code to Binary Code:
 
 ```python
-import BNG
-binary_code = BNG.gtb(["ATCG"],"dna") # first parameter is genetic code as a list, second parameter is the type of genetic code i.e. DNA, or RNA
+import bingenetic
+binary_code = bingenetic.gtb(["ATCG"],"dna") # first parameter is genetic code as a list, second parameter is the type of genetic code i.e. DNA, or RNA
 ```
 
 ```
