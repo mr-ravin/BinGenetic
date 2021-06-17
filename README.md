@@ -17,6 +17,12 @@ import bingenetic
 binary_code = bingenetic.gtb(["ATCG"],"dna") # first parameter is genetic code as a list, second parameter is the type of genetic code i.e. DNA, or RNA
 ```
 
+
+#### Installation using pip:
+```
+pip install bingenetic
+```
+
 ```
 Copyright (c) 2020 Ravin Kumar
 Website: https://mr-ravin.github.io
