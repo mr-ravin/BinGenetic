@@ -24,7 +24,7 @@ pip install bingenetic
 ```
 
 ```
-Copyright (c) 2020 Ravin Kumar
+Copyright (c) 2020-2021 Ravin Kumar
 Website: https://mr-ravin.github.io
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation 
