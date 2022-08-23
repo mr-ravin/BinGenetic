@@ -1,4 +1,5 @@
 # BinGenetic
+
 This repository contains a simple python library to convert binary data (in digital form) to genetic codes and further genetic codes back to binary data.
 
 ##### Author: [Ravin Kumar](https://mr-ravin.github.io)
@@ -14,7 +15,7 @@ genetic_code = bingenetic.btg(["00011011"],"dna") # first parameter is binary co
 
 ```python
 import bingenetic
-binary_code = bingenetic.gtb(["ATCG"],"dna") # first parameter is genetic code as a list, second parameter is the type of genetic code i.e. DNA, or RNA
+binary_code = bingenetic.gtb(["ACGT"],"dna") # first parameter is genetic code as a list, second parameter is the type of genetic code i.e. DNA, or RNA
 ```
 
 
