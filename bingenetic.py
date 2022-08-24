@@ -39,7 +39,7 @@ def gtb(gen_code_list,mode="dna"): # genetic code to binary code
        res_list.append(tmp)
   return res_list
 
-def btg(bin_code_list,mode="dna",EOF_CODE=""): # binary code to genetic code, here EOF_CODE is a special binary code to make binary numbers even
+def btg(bin_code_list,mode="dna"): # binary code to genetic code, here EOF_CODE is a special binary code to make binary numbers even
   res_list=[]
   mode = mode.lower()
   if mode=="dna":
@@ -47,9 +47,8 @@ def btg(bin_code_list,mode="dna",EOF_CODE=""): # binary code to genetic code, he
       tmp=""
       elem_idx=0
       bin_code_line_len=len(bin_code_line)
-      while bin_code_line_len%2==1:
-        bin_code_line=bin_code_line+EOF_CODE
-        bin_code_line_len=len(bin_code_line)
+      if bin_code_line_len%2==1:
+        raise TypeError("Not a valid length of binary sequence to generate the DNA")
       while elem_idx<bin_code_line_len:
         if bin_code_line[elem_idx]=="0" and bin_code_line[elem_idx+1]=="0":
           tmp=tmp+"A"
@@ -68,9 +67,8 @@ def btg(bin_code_list,mode="dna",EOF_CODE=""): # binary code to genetic code, he
       tmp=""
       elem_idx=0
       bin_code_line_len=len(bin_code_line)
-      while bin_code_line_len%2==1:
-        bin_code_line=bin_code_line+EOF_CODE
-        bin_code_line_len=len(bin_code_line)
+      if bin_code_line_len%2==1:
+        raise TypeError("Not a valid length of binary sequence to generate the RNA")
       while elem_idx<bin_code_line_len:
         if bin_code_line[elem_idx]=="0" and bin_code_line[elem_idx+1]=="0":
           tmp=tmp+"A"
