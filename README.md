@@ -1,4 +1,4 @@
-![BinGenetic](https://github.com/mr-ravin/BinGenetic/blob/main/BinGenetic.jpg?raw=true)
+![BinGenetic](https://github.com/mr-ravin/BinGenetic/blob/main/BinGenetic_2.jpg?raw=true)
 
 This repository contains a simple python library to convert binary data (in digital form) to genetic sequences (dna or rna) and vice versa.
 
