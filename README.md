@@ -1,4 +1,4 @@
-![BinGenetic](BinGenetic_2.jpg?raw=true)
+![BinGenetic](BinGenetic_Banner.jpg?raw=true)
 
 **BinGenetic** is a lightweight Python library that enables seamless conversion between binary data and genetic sequences (DNA or RNA), facilitating research in DNA data storage and bioinformatics.
 
