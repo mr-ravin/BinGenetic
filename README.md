@@ -18,7 +18,7 @@ pip install git+https://github.com/mr-ravin/bingenetic.git
 ```
 
 ### 📌 **Dependencies:**
-- Python 3.x
+- Python >= 3.7
 - No additional dependencies required
 
 ---
