@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="bingenetic",
-    version="2.4",
+    version="2.6",
     author="Ravin Kumar",
     author_email="mr.ravin_kumar@hotmail.com",
     description="BinGenetic is a lightweight Python library that enables seamless conversion between binary data and genetic sequences (DNA or RNA), facilitating research in DNA data storage and bioinformatics.",

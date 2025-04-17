@@ -1,4 +1,4 @@
-__version__ = '2.4'
+__version__ = '2.6'
 
 def gtb(gen_code_str: str, mode: str = "dna") -> str:
     """
@@ -34,7 +34,7 @@ def gtb(gen_code_str: str, mode: str = "dna") -> str:
     except KeyError:
         raise TypeError("Not a valid {} sequence".format(mode.upper()))
     
-    return ''.join(binary_str)
+    return binary_str
 
 def btg(bin_code_str: str, mode: str = "dna") -> str:
     """
@@ -64,6 +64,7 @@ def btg(bin_code_str: str, mode: str = "dna") -> str:
     lookup = BINARY_TO_DNA if mode == "dna" else BINARY_TO_RNA
     
     genetic_str = ""
+    
     if len(bin_code_str) % 2 != 0:
             raise TypeError("Binary sequence length must be even")
     try:
@@ -71,4 +72,4 @@ def btg(bin_code_str: str, mode: str = "dna") -> str:
     except KeyError:
             raise TypeError("Invalid binary sequence for {}".format(mode.upper()))
     
-    return ''.join(genetic_str)
+    return genetic_str
