@@ -29,7 +29,7 @@ pip install git+https://github.com/mr-ravin/bingenetic.git
 import bingenetic
 
 # Convert binary to DNA sequence
-genetic_code = bingenetic.btg(["00011011"], "dna")  # Binary -> DNA
+genetic_code = bingenetic.btg("00011011", "dna")  # Binary -> DNA
 print(genetic_code)  # Output: 'ACGT'
 ```
 
@@ -38,7 +38,7 @@ print(genetic_code)  # Output: 'ACGT'
 import bingenetic
 
 # Convert DNA sequence to binary
-binary_code = bingenetic.gtb(["ACGT"], "dna")  # DNA -> Binary
+binary_code = bingenetic.gtb("ACGT", "dna")  # DNA -> Binary
 print(binary_code)  # Output: '00011011'
 ```
 

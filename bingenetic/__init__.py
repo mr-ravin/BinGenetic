@@ -1,18 +1,18 @@
-__version__ = '2.3'
+__version__ = '2.4'
 
-def gtb(gen_code_list: list[str], mode: str = "dna") -> str:
+def gtb(gen_code_str: str, mode: str = "dna") -> str:
     """
-    Converts a list of genetic sequences (DNA or RNA) into binary representations.
+    Converts a list of genetic sequence (DNA or RNA) into binary representation.
 
     Parameters:
-    gen_code_list (list of str): List of genetic sequences to be converted.
-                                 Each sequence should consist of 'A', 'T', 'C', 'G' for DNA,
+    gen_code_str (str):          String of genetic sequence to be converted.
+                                 Sequence should consist of 'A', 'T', 'C', 'G' for DNA,
                                  or 'A', 'U', 'C', 'G' for RNA.
     mode (str, optional): Specifies whether the input sequence is "dna" or "rna". 
                           Defaults to "dna".
 
     Returns:
-    str: Concatenated binary representation of the input genetic sequences.
+    str: Binary representation of the input genetic sequence.
 
     Raises:
     TypeError: If an invalid genetic sequence is encountered.
@@ -27,28 +27,28 @@ def gtb(gen_code_list: list[str], mode: str = "dna") -> str:
     
     lookup = DNA_TO_BINARY if mode == "dna" else RNA_TO_BINARY
     
-    binary_list = []
-    for gen_code_line in gen_code_list:
-        try:
-            binary_list.append(''.join(lookup[base] for base in gen_code_line.upper()))
-        except KeyError:
-            raise TypeError("Not a valid {} sequence".format(mode.upper()))
-    
-    return ''.join(binary_list)
+    binary_str = ""
 
-def btg(bin_code_list: list[str], mode: str = "dna") -> str:
+    try:
+        binary_str = ''.join(lookup[base] for base in gen_code_str.upper())
+    except KeyError:
+        raise TypeError("Not a valid {} sequence".format(mode.upper()))
+    
+    return ''.join(binary_str)
+
+def btg(bin_code_str: str, mode: str = "dna") -> str:
     """
-    Converts a list of binary sequences into genetic sequences (DNA or RNA).
+    Converts a string of binary sequence into genetic sequence (DNA or RNA).
 
     Parameters:
-    bin_code_list (list of str): List of binary sequences to be converted.
-                                 Each binary sequence should have an even length 
+    bin_code_str (str):          String of binary sequence to be converted.
+                                 Binary sequence should have an even length 
                                  and contain only '0' and '1'.
     mode (str, optional): Specifies whether the output should be "dna" or "rna". 
                           Defaults to "dna".
 
     Returns:
-    str: Concatenated genetic sequence corresponding to the input binary sequences.
+    str: Genetic sequence corresponding to the input binary sequence.
 
     Raises:
     TypeError: If an invalid binary sequence is encountered or if the binary sequence length is odd.
@@ -63,13 +63,12 @@ def btg(bin_code_list: list[str], mode: str = "dna") -> str:
     
     lookup = BINARY_TO_DNA if mode == "dna" else BINARY_TO_RNA
     
-    genetic_list = []
-    for bin_code_line in bin_code_list:
-        if len(bin_code_line) % 2 != 0:
+    genetic_str = ""
+    if len(bin_code_str) % 2 != 0:
             raise TypeError("Binary sequence length must be even")
-        try:
-            genetic_list.append(''.join(lookup[bin_code_line[i:i+2]] for i in range(0, len(bin_code_line), 2)))
-        except KeyError:
+    try:
+            genetic_str = ''.join(lookup[bin_code_str[i:i+2]] for i in range(0, len(bin_code_str), 2))
+    except KeyError:
             raise TypeError("Invalid binary sequence for {}".format(mode.upper()))
     
-    return ''.join(genetic_list)
+    return ''.join(genetic_str)
